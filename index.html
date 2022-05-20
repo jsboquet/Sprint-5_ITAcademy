@@ -5,13 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sprint V</title>
+
+    <!--Fulla d'estils-->
+    <link rel="stylesheet" href="style.css" />
+    <!--Tipografies-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Akshar:wght@500&family=Titan+One&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div>
-      <h2>Are you ready to laugh?</h2>
-      <div class="acudit"></div>
-      <button id="next_joke_button">Next joke</button>
-    </div>
+    <!--Capçalera-->
+    <header>
+      <nav class="weather_forecast"><p>Avui: Parcialment ennuvolat</p></nav>
+    </header>
+
+    <!--Main-->
+    <section class="main_section">
+      <article class="wrapper_acudits">
+        <header>
+          <h2 class="card_title">Fancy a joke?</h2>
+        </header>
+        <div class="card_main"><p id="joke_display"></p></div>
+        <button class="card_button" id="next_joke_button">Next joke</button>
+      </article>
+    </section>
+
+    <!--Scripts de JS-->
     <script src="app.js" type="module"></script>
   </body>
 </html>
