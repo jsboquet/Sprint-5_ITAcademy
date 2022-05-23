@@ -44,3 +44,35 @@ body {
     font-size: 1.2rem;
     transition: 0.2s;
 }
+
+.card_feedback {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+}
+
+.feedback_button {
+    width: 60px;
+    border: 0;
+    background: 0;
+    filter: grayscale(100);
+    transition: 0.5s;
+}
+
+.feedback_button:hover {
+    filter: grayscale(0);
+}
+
+.feedback_button:focus {
+    filter: grayscale(0);
+}
+
+.feedback_button img {
+    width: 45px;
+    transition: 0.2s;
+}
+
+.feedback_button img:hover {
+    width: 50px;
+}
