@@ -1,5 +1,5 @@
 window.onload = () => {
-    next_button.addEventListener('click', fetchJoke);
+    next_button.addEventListener('click', getRandomJoke);
     fetchWeather();
     sad_feedback.addEventListener('click', () => feedback(1));
     neutral_feedback.addEventListener('click', () => feedback(2));
@@ -62,4 +62,19 @@ async function fetchWeather() {
     const response = await fetch(CLIMA_API_URL).then(resp => resp.json());
     weather_display.setAttribute('src', response.current.condition.icon);
     temp_display.innerHTML = `${response.current.temp_c}ºC`;
+}
+const CHUCK_API_URL = 'https://api.chucknorris.io/jokes/random';
+async function fetchChuckNorris() {
+    const response = await fetch(CHUCK_API_URL).then(resp => resp.json());
+    currentJoke = response.value;
+    joke_display.innerHTML = response.value;
+}
+function getRandomJoke() {
+    const random = Math.random();
+    if (random > 0.5) {
+        fetchChuckNorris();
+    }
+    else {
+        fetchJoke();
+    }
 }
