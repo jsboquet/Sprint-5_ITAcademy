@@ -17,7 +17,6 @@ const headers = { headers: { Accept: 'application/json' } };
 let currentJoke;
 let reportAcudit;
 async function fetchJoke() {
-    console.log(reportAcudits);
     try {
         const response = await fetch(JOKE_API_URL, headers);
         const responseObj = await response.json();
@@ -70,6 +69,7 @@ async function fetchChuckNorris() {
     joke_display.innerHTML = response.value;
 }
 function getRandomJoke() {
+    console.log(reportAcudits);
     const random = Math.random();
     if (random > 0.5) {
         fetchChuckNorris();
@@ -77,4 +77,14 @@ function getRandomJoke() {
     else {
         fetchJoke();
     }
+    switch_background(bgd_index);
+}
+const blob_background = document.querySelector('#blob_background');
+let bgd_index = 0;
+const background_array = ['blob_1.svg', 'blob_2.svg', 'blob_3.svg', 'blob_4.svg', 'blob_5.svg', 'blob_6.svg', 'blob_7.svg', 'blob_8.svg', 'blob_9.svg', 'blob_10.svg'];
+function switch_background(index) {
+    const src = "media/background_svg/background-changing/";
+    let current = src + background_array[index];
+    blob_background.setAttribute("src", current);
+    bgd_index = bgd_index === (background_array.length - 1) ? 0 : ++bgd_index;
 }

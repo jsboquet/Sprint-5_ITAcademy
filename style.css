@@ -1,60 +1,109 @@
 body {
-    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); 
     margin: 0px;
 }
 
 .weather_forecast {
+    position: absolute;
     display: flex;
+    align-content: center;
     padding: 5px 0px 5px 25px;
     font-family: 'Akshar', sans-serif;
     font-size: 1.5rem;
 }
 
 #clima {
+    padding-top: 8px;
     padding-right: 10px;
 }
 
 #temperatura {
-    padding-left: 12px;
     border-left: 2px solid black;
+    padding-left: 18px;
 }
 
 .main_section {
+    position: relative;
     display: flex;
-    margin-top: 15vh;
     justify-content: center;
+    align-items: center;
     width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.blob_background {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+#blob_background {
+    width: 100%;
+    height: 100%;
+}
+
+.blob_upRight {
+    position: absolute;
+    top: 18vh;
+    right: 5vw;
+    width: 15vw;
+    height: 15vh;
+    background-image: url("media/background_svg/blobanimationUR.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+}
+
+.blob_downLeft {
+    position: absolute;
+    bottom: 18vh;
+    left: 5vw;
+    width: 15vw;
+    height: 15vh;
+    background-image: url("media/background_svg/blobanimationDL.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
 }
 
 .wrapper_acudits {
     text-align: center;
-    margin: 0px 10px 0px 10px;
-    min-width: 50%;
-    max-width: 75%;
-    border-radius: 15px;
-    box-shadow: 3px 5px 15px 3px rgba(32, 32, 32, 0.3);
-    background-color: rgb(252, 226, 226);
+    font-family: 'Akshar', sans-serif;
+    color: rgb(224, 224, 224);
 }
 
 .card_title {
     padding: 5px 25px 0px 25px;
-    font-family: 'Titan One', cursive;
     font-size: 2.5rem;
 }
 
 .card_main {
     padding: 10px 35px 10px 35px;
-    font-family: 'Akshar', sans-serif;
+    max-width: 450px;
     font-size: 1.2rem;
 }
 
 .card_button {
-    cursor:pointer;
-    margin: 25px;
-    padding: 7px 15px 7px 15px;
     font-family: 'Akshar', sans-serif;
+    background: transparent;
+    border: 2px solid black;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 25px;
+    padding: 10px 40px 10px 40px;
     font-size: 1.2rem;
     transition: 0.2s;
+}
+
+.button_shadow {
+    position: absolute;
+    background-color: #EDC951;
+    transform: translateX(-38px) translateY(-32px);
+    border-radius: 50px;
+    height: 48px;
+    width: 155px;
+    z-index: -1;
 }
 
 .card_feedback {
@@ -89,3 +138,21 @@ body {
 .feedback_button img:hover {
     width: 50px;
 }
+
+@media only screen and (max-width: 480px) {
+    #blob_background {
+        transform: scale(1.4, 2);
+    }
+
+    .blob_upRight {
+    top: 2vh;
+    }
+
+    .blob_downLeft {
+    bottom: 2vh;
+    }
+
+    .wrapper_acudits {
+        max-width: 75%;
+    }
+  }
